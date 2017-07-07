@@ -2,20 +2,21 @@ class System
 
 def initialize
   @bodies = []
+  @bodyy = body
 end
 
   def reader
 @bodies
     end
 
-def add(body)
-  @@bodies << body
+def add
+  @@bodies << bodyy
 
 end
 
 def total_mess
-@bodies.each do |body|
-  body += 1
+@bodies.each do |bod|
+  bod += 1
   return @bodies
 end
 end

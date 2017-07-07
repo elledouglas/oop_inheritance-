@@ -52,21 +52,23 @@ class Instructor < Person
     @cohort.each do |student|
       student.learn
   end
+end
 #or
 #def teach
 #@cohort.each { |student| student.learn }
 #end
 
- def full_name
-"Professor #{ super }"
+ def full_name_prof
+"Professor #{@full_name} #{@last_name}"
  end
 
+
 end
+chris = Instructor.new("Chris", "Smith", "Math")
+chris.full_name_prof
 
-chris = Instructor.new("Chris", "Smith")
-chris.greeting("Chris", "Smith")
 
-christina = Student.new("Christina", "Smith")
-christina.greeting("Christina", "Smith")
+christina = Student.new("Christina", "Smith", "Love")
+christina.full_name
 
 #8 do
