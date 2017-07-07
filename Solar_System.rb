@@ -8,47 +8,44 @@ end
 @bodies
     end
 
-def add
+def add(body)
+  @@bodies << body
+
 end
 
 def total_mess
 @bodies.each do |body|
-  body = body + 1
-  return sum
+  body += 1
+  return @bodies
 end
 end
 
 class Body
+  attr_reader :name, :mass
 def initialize
 @name = name
 @mass = mass
-
-def reader
-  @name, @mass
-end
 end
 end
 
-class Planets
+class Planets < Body
   def day
+    "24hours"
+
   end
 
   def year
+    "352 days"
   end
 end
 
-class Star
+class Star < Body
 
-  def type
-  end
+
 end
 
-class Moon
-  def month
-  end
-  def planet
-    Planets
-  end
+class Moon < Body
+
 end
 
 end
