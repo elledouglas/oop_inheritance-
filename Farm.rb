@@ -1,58 +1,59 @@
 class Farm
-@@farm = []
+  require_relative 'field_size.rb'
 
-  def initialize
 
-@total_harvest = 1000
-@field = field
-@size = size
+  def initialize(name)
+@name = name
 
+end
+
+  def main_menu
+    while true # repeat indefinitely
+      print_main_menu
+      user_selected = gets.to_i
+      call_option(user_selected)
+    end
+  end
+
+    def print_main_menu
+      puts '[1] Field'
+      puts '[2] Harvest'
+      puts '[3] Status'
+      puts '[4] Relax'
+      puts '[5] Exit'
+    end
+
+
+
+    def harvest
+      Field.harvest
+    end
+
+    def status
+  Field.status
+  end
+
+    def call_option(user_selected)
+  case user_selected
+  when 1 then field
+  when 2 then harvest
+  when 3 then status
+  when 4 then relax
+  when 5 then exit
 end
 
 #adds a new field
-def field
-  "What kind of field is it? corn or wheat"
-  field = gets.chomp
-  "How large is the field in hectares"
-  size = gets.chomp
-  "Added a #{@field} of #{@size}"
-  @farm << @field
-  @farm << @size
-
-end
-
-
-#harvest crops and adds to total harvested
-def harvest
-  @farm.each do |harvest|
-    "Harvesting #{@total_harvest} food from #{@size} hectare #{@field} field "
-  "The farm has #{total_harvest} food so far"
-
+  def field
+    "What kind of field is it? corn or wheat"
+    field = gets.chomp
+    "How large is the field in hectares"
+    size = gets.chomp
+    "Added a #{@field} of #{@size}"
   end
 
-#displays some info about the farm
-  def status(field, type)
-    return total_food_produced
-
-  end
-
-#provides lovley description of your fields
 def relax
-
-"You have a beautiful field, relax"
+Field.relax
 end
-
-def exit
-end
-
-
-
-
-
-
-
-
-
 
 
 
