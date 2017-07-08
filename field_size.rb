@@ -1,7 +1,18 @@
 class Field
+  attr_accessor :size :hectares
+
+
 
   @@farm = []
+
+  def initialize(size)
+    @size = size
+#not sure if I need this because I have a create class
+
+  end
   #harvest crops and adds to total harvested
+
+
   def self.harvest
     @farm.each do |size|
       @total_harvest = @total_harvest + @size
@@ -10,20 +21,13 @@ class Field
 
     #displays some info about the farm
       def self.status
-        return total_food_produced
+        "The farm has harvested #{total_food_produced} food so far"
       end
 
-
-
-
-      #adds a new field
-        def field
-          "What kind of field is it? corn or wheat"
-          field = gets.chomp
-          "How large is the field in hectares"
-          size = gets.chomp
-          "Added a #{@field} of #{@size}"
-        end
+      def self.create(size)
+        field_type = Field.new(size)
+        @@farm << field_type
+      end
 
         #provides lovley description of your fields
         #wants a few
@@ -35,5 +39,21 @@ class Field
           "Peace"
           exit
         end
+
+end
+
+class Corn < Field
+  def initialize
+    @size = size
+    @hectares = 50
+    ebd
+end
+
+class Wheat < Field
+
+  def initialize
+    @size = size
+    @hectares = 100
+  end
 
 end

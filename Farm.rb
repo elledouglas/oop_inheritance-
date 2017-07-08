@@ -15,6 +15,8 @@ end
     end
   end
 
+
+#copy & pasted from yesterdays assignment
     def print_main_menu
       puts '[1] Field'
       puts '[2] Harvest'
@@ -33,6 +35,7 @@ end
   Field.status
   end
 
+#copy and pasted from yesterdays assignment
     def call_option(user_selected)
   case user_selected
   when 1 then field
@@ -51,11 +54,12 @@ end
     "Added a #{@field} of #{@size}"
   end
 
+
+#provides lovley description of your fields
+#wants a few
 def relax
-Field.relax
+"You have a beautiful field, relax"
 end
-
-
 
 
 
