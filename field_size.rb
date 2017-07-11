@@ -1,5 +1,5 @@
 class Field
-  attr_accessor :size :hectares
+  attr_accessor :size, :hectares
 
 
 
@@ -14,10 +14,11 @@ class Field
 
 
   def self.harvest
-    @farm.each do |size|
+    @@farm.each do |size|
       @total_harvest = @total_harvest + @size
     "The farm has #{@total_harvest} food so far"
     end
+
 
     #displays some info about the farm
       def self.status
@@ -29,11 +30,7 @@ class Field
         @@farm << field_type
       end
 
-        #provides lovley description of your fields
-        #wants a few
-        def relax
-        "You have a beautiful field, relax"
-        end
+
 
         def exit
           "Peace"
@@ -55,5 +52,8 @@ class Wheat < Field
     @size = size
     @hectares = 100
   end
+
+end
+
 
 end

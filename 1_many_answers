@@ -1,0 +1,55 @@
+#1 to many / many - to many answers
+
+LINE 1: select * cities where province_id=14;
+                 ^
+1many=# SELECT * from cities where province_id=14;
+ id |  name   | year_founded | province_id
+----+---------+--------------+-------------
+  8 | Toronto |         1793 |          14
+ 11 | Ottawa  |         1826 |          14
+
+(2 rows)
+
+
+
+ Who wrote the article called 'Coding Bootcamps and Emotional Labor'?                                               ^
+
+
+
+How many people live at 4740 McDermott Street?
+LINE 1: select * persons from residences where id=9;
+                 ^
+1many=# select * from persons where residence_id=9;
+ id |     name     | age | residence_id
+----+--------------+-----+--------------
+ 16 | Malvina King |  28 |            9
+ 17 | Theo Wolff   |  27 |            9
+(2 rows)
+What city is 4740 McDermott Street in?
+1many=# select * from cities where id=11;
+ id |  name  | year_founded | province_id
+----+--------+--------------+-------------
+ 11 | Ottawa |         1826 |          14
+(1 row)
+What province is 4740 McDermott Street in?
+1many=# select * from provinces  where id=14;
+ id |  name   | year_founded | country_id
+----+---------+--------------+------------
+ 14 | Ontario |         1867 |          1
+(1 row)
+
+1many=#
+
+What country is 4740 McDermott Street in?
+LINE 1: select * from country  where id=1;
+                      ^
+1many=# select * from countries  where id=1;
+ id |  name  | year_founded | national_animal
+----+--------+--------------+-----------------
+  1 | Can
+
+1many=# select * from residences where address='4740 McDermott Street';
+ id |        address        | year_built | city_id
+----+-----------------------+------------+---------
+  9 | 4740 McDermott Street |       1923 |      11
+(1 row)

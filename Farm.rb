@@ -1,7 +1,6 @@
 class Farm
   require_relative 'field_size.rb'
 
-
   def initialize(name)
 @name = name
 
@@ -13,7 +12,7 @@ end
       user_selected = gets.to_i
       call_option(user_selected)
     end
-  end
+end 
 
 
 #copy & pasted from yesterdays assignment
@@ -59,9 +58,4 @@ end
 #wants a few
 def relax
 "You have a beautiful field, relax"
-end
-
-
-
-
 end
